@@ -6,11 +6,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 360
     steps:
       - name: Start VPS
         run: |
           sudo apt update
           sudo apt install -y tmate
-          tmate -S /tmp/tmate.sock new-session -d
-          tmate -S /tmp/tmate.sock wait tmate-ready
-          tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
+          tmate new-session -d
+          tmate wait tmate-ready
+          tmate display -p '#{tmate_ssh}'
+          sleep 21600
