@@ -15,4 +15,5 @@ jobs:
           tmate new-session -d
           tmate wait tmate-ready
           tmate display -p '#{tmate_ssh}'
+          echo "VPS is running..."
           sleep 21600
